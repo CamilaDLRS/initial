@@ -46,7 +46,7 @@ public class Main {
                     System.out.println("This exercise does not exist.");
                     break;
             }
-            System.out.println("Choose another one (1-10). (Or type 0 to stop the program.)");
+            System.out.println("\nChoose another one (1-10). (Or type 0 to stop the program.)");
             exNumber = scanner.nextInt();
         } while (exNumber != 0);
     }

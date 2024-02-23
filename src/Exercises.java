@@ -1,10 +1,7 @@
 import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
 public class Exercises {
 
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
     public void ExOne() {
         System.out.print("Type your name: ");
@@ -18,21 +15,24 @@ public class Exercises {
 
         if (userNumber > 0) {
             System.out.println("This number is positive.");
-        } else if (userNumber < 0) {
+        }
+        else if (userNumber < 0) {
             System.out.println("This number is negative.");
-        } else {
+        }
+        else {
             System.out.println("This number is neutral.");
         }
     }
 
     public void ExThree() {
-
         double avarege = 0;
         System.out.println("Lets check the avarege of 3 number");
+
         for (int i = 0; i < 3; i++) {
             System.out.print("Type a number: ");
             avarege += scanner.nextInt();
         }
+
         System.out.println("The avarege is = " + avarege / 3);
     }
 
@@ -53,12 +53,35 @@ public class Exercises {
 
     public void ExSix() {
     }
+
     public void ExSeven() {
     }
+
     public void ExEight() {
     }
+
     public void ExNine() {
+        System.out.println("Lets check if an number is Prime: ");
+        scanner.nextInt();
+
+
     }
+
     public void ExTen() {
+        for (int i = 0; i < 100; i++) {
+
+            if (((i % 3) == 0) && ((i % 5) == 0)) {
+                System.out.println("FizzBuzz");
+            }
+            if ((i % 3) == 0) {
+                System.out.println("Fizz");
+            }
+            if ((i % 5) == 0) {
+                System.out.println("Buzz");
+            }
+            else {
+                System.out.println(i);
+            }
+        }
     }
 }
