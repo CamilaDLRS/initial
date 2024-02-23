@@ -1,17 +1,17 @@
 import java.util.Scanner;
 public class Exercises {
 
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     public void ExOne() {
         System.out.print("Type your name: ");
-        String userName = scanner.next();
+        String userName = this.scanner.next();
         System.out.printf("Hello and welcome, " + userName);
     }
 
     public void ExTwo() {
         System.out.print("Type an number: ");
-        double userNumber = scanner.nextDouble();
+        double userNumber = this.scanner.nextDouble();
 
         if (userNumber > 0) {
             System.out.println("This number is positive.");
@@ -30,7 +30,7 @@ public class Exercises {
 
         for (int i = 0; i < 3; i++) {
             System.out.print("Type a number: ");
-            avarege += scanner.nextInt();
+            avarege += this.scanner.nextInt();
         }
 
         System.out.println("The avarege is = " + avarege / 3);
@@ -38,7 +38,7 @@ public class Exercises {
 
     public void ExFour() {
         System.out.println("Lets check if you can go to the jale \n Type your age: ");
-        double userAge =  scanner.nextInt();
+        double userAge =  this.scanner.nextInt();
 
         if (userAge >= 18) {
             System.out.println("Yes, you can");
@@ -62,7 +62,7 @@ public class Exercises {
 
     public void ExNine() {
         System.out.println("Lets check if an number is Prime: ");
-        scanner.nextInt();
+        this.scanner.nextInt();
 
 
     }
