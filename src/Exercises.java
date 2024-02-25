@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 public class Exercises {
 
     private final Scanner scanner = new Scanner(System.in);
@@ -49,22 +50,82 @@ public class Exercises {
     }
 
     public void ExFive() {
+        System.out.print("Informe a temperatura em C°: ");
+        double tempCelsius = scanner.nextDouble();
+        double tempFahrenehit = tempCelsius * 1.8 + 32;
+        System.out.println(tempFahrenehit + "F°");
     }
 
     public void ExSix() {
+        System.out.println("Lançando dado...");
+        Random random = new Random();
+        int dado = random.nextInt(6);
+        System.out.println("Dado n°: " + (dado + 1));
     }
 
     public void ExSeven() {
+        double doubleEscolha = Math.random() * 4;
+        int escolhaRandom = (int) doubleEscolha;
+
+        System.out.print("Escolha [1]Pedra [2]Papel [3]Tesoura: ");
+        int escolhaUsuario = scanner.nextInt();
+
+        if (escolhaRandom == 1) {
+            if (escolhaUsuario == 2) {
+                System.out.println("Você ganhou, a maquina escolheu Pedra");
+            } else if (escolhaUsuario == 3) {
+                System.out.println("Você perdeu, a maquina escolheu Pedra");
+            } else {
+                System.out.println("Empate, a maquina escolheu Pedra");
+            }
+        } else if (escolhaRandom == 2) {
+            if (escolhaUsuario == 3) {
+                System.out.println("Você ganhou, a maquina escolheu Papel");
+            } else if (escolhaUsuario == 1) {
+                System.out.println("Você perdeu, a maquina escolheu Papel");
+            } else {
+                System.out.println("Empate, a maquina escolheu Papel");
+            }
+        } else {
+            if (escolhaUsuario == 1) {
+                System.out.println("Você ganhou, a maquina escolheu Tesoura");
+            } else if (escolhaUsuario == 2) {
+                System.out.println("Você perdeu, a maquina escolheu Tesoura");
+            } else {
+                System.out.println("Empate, a maquina escolheu Tesoura");
+            }
+        }
     }
 
     public void ExEight() {
+        System.out.print("Digite um N° para ver seu fatorial: ");
+        int num = scanner.nextInt();
+        int resultado = num;
+        String frase = String.valueOf(num);
+        for (int i = 1; i < num; i++) {
+            int proximo = num - i;
+            resultado *= proximo;
+            frase += " * " + String.valueOf(proximo);
+        }
+        System.out.println(frase + " = " + resultado);
     }
 
     public void ExNine() {
         System.out.println("Lets check if an number is Prime: ");
-        this.scanner.nextInt();
-
-
+        int num = this.scanner.nextInt();
+        boolean ePrimo = true;
+        if (num > 0) {
+            for (int i = 2; i < num; i++) {
+                if (num % i == 0) {
+                    System.out.println(num + " não é primo");
+                    ePrimo = false;
+                    break;
+                }
+            }
+            if (ePrimo) {
+                System.out.println(num + " é primo");
+            }
+        }
     }
 
     public void ExTen() {
