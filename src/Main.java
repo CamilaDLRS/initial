@@ -7,7 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Exercises exercises = new Exercises();
 
-        System.out.println("Lets check some exercises, choose between 1 to 10. (Type 0 to stop the program.)");
+        System.out.println("Let's check out some exercises, choose between 1 and 10. (Enter 0 to stop the program.)");
         int exNumber = scanner.nextInt();
 
         do {
@@ -46,7 +46,7 @@ public class Main {
                     System.out.println("This exercise does not exist.");
                     break;
             }
-            System.out.println("\nChoose another one (1-10). (Or type 0 to stop the program.)");
+            System.out.println("\nChoose another between 1 to 10. (Or enter 0 to stop the program).");
             exNumber = scanner.nextInt();
         } while (exNumber != 0);
     }

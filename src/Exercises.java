@@ -11,7 +11,7 @@ public class Exercises {
     }
 
     public void ExTwo() {
-        System.out.print("Type an number: ");
+        System.out.print("Type a number: ");
         double userNumber = this.scanner.nextDouble();
 
         if (userNumber > 0) {
@@ -27,104 +27,124 @@ public class Exercises {
 
     public void ExThree() {
         double avarege = 0;
-        System.out.println("Lets check the avarege of 3 number");
+        System.out.println("Let's check the average of 3 integer numbers");
 
         for (int i = 0; i < 3; i++) {
             System.out.print("Type a number: ");
             avarege += this.scanner.nextInt();
         }
 
-        System.out.println("The avarege is = " + avarege / 3);
+        System.out.println("The average is = " + avarege / 3);
     }
 
     public void ExFour() {
-        System.out.println("Lets check if you can go to the jale \n Type your age: ");
+        System.out.println("Let's check if you can go to the jale \nType your age: ");
         double userAge =  this.scanner.nextInt();
 
         if (userAge >= 18) {
             System.out.println("Yes, you can");
         }
         else {
-            System.out.println("No, you can not");
+            System.out.println("No, you cannot");
         }
     }
 
     public void ExFive() {
-        System.out.print("Informe a temperatura em C°: ");
+        System.out.println("Let's convert Celsius to Fahrenheit");
+        System.out.print("Type the temperature in C°: ");
         double tempCelsius = scanner.nextDouble();
-        double tempFahrenehit = tempCelsius * 1.8 + 32;
-        System.out.println(tempFahrenehit + "F°");
+        double tempFahrenheit = tempCelsius * 1.8 + 32;
+        System.out.println(tempFahrenheit + " F°");
     }
 
     public void ExSix() {
-        System.out.println("Lançando dado...");
+        System.out.println("Rolling a 6-sided die...");
         Random random = new Random();
-        int dado = random.nextInt(6);
-        System.out.println("Dado n°: " + (dado + 1));
+        int diceResult = random.nextInt(6);
+        System.out.println("Result: " + (diceResult + 1));
     }
 
     public void ExSeven() {
-        double doubleEscolha = Math.random() * 4;
-        int escolhaRandom = (int) doubleEscolha;
+        Random random = new Random();
+        int randomResult = random.nextInt(4) + 1;
 
-        System.out.print("Escolha [1]Pedra [2]Papel [3]Tesoura: ");
-        int escolhaUsuario = scanner.nextInt();
+        System.out.print("Choose [1]Rock [2]Paper [3]Scissors: ");
+        int userChoise = scanner.nextInt();
 
-        if (escolhaRandom == 1) {
-            if (escolhaUsuario == 2) {
-                System.out.println("Você ganhou, a maquina escolheu Pedra");
-            } else if (escolhaUsuario == 3) {
-                System.out.println("Você perdeu, a maquina escolheu Pedra");
-            } else {
-                System.out.println("Empate, a maquina escolheu Pedra");
+        if (randomResult == 1) {
+            System.out.println("System choose: Rock");
+            if (userChoise == 2) {
+                System.out.println("You won.");
             }
-        } else if (escolhaRandom == 2) {
-            if (escolhaUsuario == 3) {
-                System.out.println("Você ganhou, a maquina escolheu Papel");
-            } else if (escolhaUsuario == 1) {
-                System.out.println("Você perdeu, a maquina escolheu Papel");
-            } else {
-                System.out.println("Empate, a maquina escolheu Papel");
+            else if (userChoise == 3) {
+                System.out.println("You lost.");
             }
-        } else {
-            if (escolhaUsuario == 1) {
-                System.out.println("Você ganhou, a maquina escolheu Tesoura");
-            } else if (escolhaUsuario == 2) {
-                System.out.println("Você perdeu, a maquina escolheu Tesoura");
-            } else {
-                System.out.println("Empate, a maquina escolheu Tesoura");
+            else if (userChoise == 1) {
+                System.out.println("It is a tie.");
+            }
+        }
+        else if (randomResult == 2) {
+            System.out.println("System choose: Paper");
+            if (userChoise == 3) {
+                System.out.println("You won.");
+            }
+            else if (userChoise == 1) {
+                System.out.println("You lost.");
+            }
+            else {
+                System.out.println("It is a tie.");
+            }
+        }
+        else {
+            System.out.println("System choose: Scissors");
+            if (userChoise == 1) {
+                System.out.println("You won.");
+            }
+            else if (userChoise == 2) {
+                System.out.println("You lost.");
+            }
+            else {
+                System.out.println("It is a tie.");
             }
         }
     }
 
     public void ExEight() {
-        System.out.print("Digite um N° para ver seu fatorial: ");
-        int num = scanner.nextInt();
-        int resultado = num;
-        String frase = String.valueOf(num);
-        for (int i = 1; i < num; i++) {
-            int proximo = num - i;
-            resultado *= proximo;
-            frase += " * " + String.valueOf(proximo);
+        System.out.print("Enter a number to see your factorial: ");
+        int number = scanner.nextInt();
+        int factorial = number;
+        String textFactorial = String.valueOf(number);
+
+        for (int i = 1; i < number; i++) {
+            int previous = number - i;
+            factorial *= previous;
+            textFactorial += " * " + previous;
         }
-        System.out.println(frase + " = " + resultado);
+        System.out.println(textFactorial + " = " + factorial);
     }
 
     public void ExNine() {
-        System.out.println("Lets check if an number is Prime: ");
-        int num = this.scanner.nextInt();
-        boolean ePrimo = true;
-        if (num > 0) {
-            for (int i = 2; i < num; i++) {
-                if (num % i == 0) {
-                    System.out.println(num + " não é primo");
-                    ePrimo = false;
+        System.out.println("Let's check if a number is Prime: ");
+        int number = this.scanner.nextInt();
+        boolean prime = true;
+
+        if (number < 2) {
+            prime = false;
+        }
+        else {
+            for (int i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    prime = false;
                     break;
                 }
             }
-            if (ePrimo) {
-                System.out.println(num + " é primo");
-            }
+        }
+
+        if (prime) {
+            System.out.println(number + " it's prime");
+        }
+        else {
+            System.out.println(number + " it's not prime");
         }
     }
 
